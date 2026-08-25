@@ -1,5 +1,7 @@
 # Restore Drill 🔍
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **Verify your GitHub backups actually restore — in one command.**
 
 Backups are only worth something if they can come back. `restore-drill.sh` clones
@@ -45,4 +47,4 @@ sanity check that turns "I back up daily" into "I *know* my backups restore."
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
