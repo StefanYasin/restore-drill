@@ -1,3 +1,13 @@
+<div align="center">
+
+[![Stars](https://img.shields.io/github/stars/StefanYasin/restore-drill?style=flat)]
+[![License](https://img.shields.io/github/license/StefanYasin/restore-drill?style=flat)]
+[![Issues](https://img.shields.io/github/issues/StefanYasin/restore-drill?style=flat)]
+[![Last commit](https://img.shields.io/github/last-commit/StefanYasin/restore-drill?style=flat)]
+[![Language](https://img.shields.io/github/languages/top/StefanYasin/restore-drill?style=flat)]
+
+</div>
+
 # Restore Drill 🔍
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
