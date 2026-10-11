@@ -58,3 +58,7 @@ sanity check that turns "I back up daily" into "I *know* my backups restore."
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+Built and maintained by **Stefan Yasin** — technical operations, infrastructure, and applied AI. [Portfolio](https://stefanyasin.github.io/) · [LinkedIn](https://www.linkedin.com/in/stefanyasin/) · [Buy me a coffee](https://buymeacoffee.com/stefanthepro)
