@@ -6,6 +6,7 @@
 [![Last commit](https://img.shields.io/github/last-commit/StefanYasin/restore-drill?style=flat)]
 [![Language](https://img.shields.io/github/languages/top/StefanYasin/restore-drill?style=flat)]
 
+[![Tests](https://img.shields.io/github/actions/workflow/status/StefanYasin/restore-drill/ci.yml?style=flat&label=tests)]
 </div>
 
 # Restore Drill 🔍
