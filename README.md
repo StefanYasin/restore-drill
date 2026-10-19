@@ -31,6 +31,14 @@ bash restore-drill.sh          # run the drill, clean up after
 bash restore-drill.sh --keep   # leave the clone behind for inspection
 ```
 
+### Requirements
+
+- `bash` 4+ and `git` on PATH
+- Read access to every repo you list. Private repos clone over HTTPS, so a
+  credential helper has to exist first: run `gh auth login` and let it configure
+  git, or store a token in your credential helper. With no credentials the clone
+  step fails and the drill reports `CLONE FAILED` for that repo.
+
 Exit code `0` = pass, `1` = a repo failed. Wire it into a cron for quarterly drills.
 
 ## Config
@@ -51,10 +59,10 @@ sanity check that turns "I back up daily" into "I *know* my backups restore."
 
 ## Notes
 
-- Uses a Windows-native temp path (`%LOCALAPPDATA%\Temp`) — MSYS `/tmp` breaks
-  native `git -C` on Windows (learned the hard way)
+- Uses a Windows-native temp path per OS: `%LOCALAPPDATA%\Temp` on Windows (MSYS `/tmp`
+  breaks native `git -C`), `$TMPDIR` or `/tmp` on Linux and macOS
 - `git fsck` has no `--quiet` flag on some versions — redirect output instead
-- Works on macOS/Linux too (swap `$LOCALAPPDATA` for `/tmp` if needed)
+- Linux and macOS need no edits: the script falls back to `/tmp`
 
 ## License
 
