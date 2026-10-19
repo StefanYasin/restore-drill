@@ -8,8 +8,14 @@ REPOS=(
   "StefanYasin/hermes-vault"
   "StefanYasin/hermes-backup"
 )
-# Use a Windows-native temp path (MSYS /tmp breaks native git -C)
-TMPDIR="$LOCALAPPDATA/Temp/restore-drill-$(date +%s)"
+# Temp path: %LOCALAPPDATA%\Temp on Windows (MSYS /tmp breaks native git -C),
+# $TMPDIR or /tmp everywhere else. Guarded because set -u fails on unset vars.
+if [ -n "${LOCALAPPDATA:-}" ]; then
+  BASE_TMP="$LOCALAPPDATA/Temp"
+else
+  BASE_TMP="${TMPDIR:-/tmp}"
+fi
+TMPDIR="$BASE_TMP/restore-drill-$(date +%s)"
 mkdir -p "$TMPDIR"
 KEEP=0
 [ "${1:-}" = "--keep" ] && KEEP=1

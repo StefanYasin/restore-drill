@@ -20,4 +20,10 @@ echo "== 3. Cleanup logic =="
 grep -q 'KEEP' "$TARGET" || { echo "FAIL: missing --keep handling"; exit 1; }
 echo "PASS: --keep flag handled"
 
+echo "== 4. Portable temp path =="
+grep -q 'BASE_TMP=' "$TARGET" || { echo "FAIL: missing OS-agnostic BASE_TMP"; exit 1; }
+grep -q 'LOCALAPPDATA:-' "$TARGET" || { echo "FAIL: LOCALAPPDATA must be guarded for Linux/macOS"; exit 1; }
+grep -q 'TMPDIR:-/tmp' "$TARGET" || { echo "FAIL: missing /tmp fallback"; exit 1; }
+echo "PASS: temp path falls back when LOCALAPPDATA is unset"
+
 echo "ALL TESTS PASSED"
