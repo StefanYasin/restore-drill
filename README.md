@@ -64,6 +64,28 @@ sanity check that turns "I back up daily" into "I *know* my backups restore."
 - `git fsck` has no `--quiet` flag on some versions — redirect output instead
 - Linux and macOS need no edits: the script falls back to `/tmp`
 
+## FAQ
+
+**What does it actually verify?**
+
+It clones your configured repos (`hermes-vault` and `hermes-backup` by default) to a fresh temp directory, checks each one clones cleanly, then reports and cleans up. If a backup cannot restore, the drill fails loudly.
+
+**Does it delete anything?**
+
+Only its own temp directory, and only after the drill completes. Pass `--keep` to leave the temp dir in place for inspection.
+
+**Can I verify other repos?**
+
+Yes. Edit the `REPOS` list at the top of `restore-drill.sh`.
+
+**How do I schedule it?**
+
+Weekly via Windows Task Scheduler or cron: `bash restore-drill.sh`. It needs git authenticated to your repos.
+
+**Does it change or restore anything?**
+
+No. It is a read-only drill: it proves the backup restores. It never applies or modifies anything.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
