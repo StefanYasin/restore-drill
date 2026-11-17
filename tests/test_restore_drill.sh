@@ -18,7 +18,7 @@ echo "PASS: set -euo pipefail, REPOS, TMPDIR present"
 
 echo "== 3. Flags =="
 for flag in --keep --quiet --metadata-only --deep --dry-run --max-duration --json; do
-  grep -q "$flag" "$TARGET" || { echo "FAIL: missing flag $flag"; exit 1; }
+  grep -q -e "$flag" "$TARGET" || { echo "FAIL: missing flag $flag"; exit 1; }
 done
 echo "PASS: all documented flags present"
 
